@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.dummymovieapp">
+    <!--TODO 2: Menuju AndroidManifest disini terdapat informasi nama package serta data-data lain mengenai aplikasi DummyMovieApp ini -->
+
+    <!--Dibawah ini merupakan permission untuk menyambungkan ke internet -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!--Modifikasi:pada icon dan label diganti dari mipmap/ic_launcher menjadi menggunakan gambar pada drawable-->
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/movieapplogo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/movieapplogo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DummyMovieApp">
+
+        <!--Sebagai activity pembuka, activity yang diakses ketika  aplikasi ini dibuka  adalah splash sreen pada package ui->tvshow dengan nama file SplashScreenActivity  -->
+        <activity android:name=".ui.SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--Kemudian menjalankan activity  MainActivity dan DetailActivity-->
+        <activity android:name=".ui.detail.DetailActivity" />
+        <activity android:name=".ui.home.MainActivity"/>
+    </application>
+
+</manifest>
